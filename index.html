@@ -102,8 +102,8 @@
 <h2 id="use-cases">Use Cases</h2>
 <ul>
 <li>Create API errors - on internal (ie. localhost) and external (ie. Microsoft Graph).</li>
-<li>Fire rate limits and handle throttling - does your app handle <code>Retry-After</code> header.</li>
-<li>Add latency and have the UI display loading data messages</li>
+<li>Add latency and have the UI display loading data messages.</li>
+<li>Fire rate limits and handle throttling - does your app handle <code>Retry-After</code> header?</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
@@ -131,7 +131,7 @@
 <li>Check if your API is making requests with least permissions with <code>API Center</code></li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
   /* Layout of pagination content */
   box-sizing: border-box;
   text-align: right;
@@ -141,6 +141,15 @@
   padding: 20px;
 }
 " lang="en-US" data-marpit-pagination="4" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
+  
+  box-sizing: border-box;
+  text-align: right;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  padding: 20px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="14" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FHVTJlGSxhcw&quot;);background-size:auto 300px;"><figcaption>Get started with Dev Proxy</figcaption></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="6" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
   /* Layout of pagination content */
   box-sizing: border-box;
   text-align: right;
@@ -149,11 +158,29 @@
   line-height: 120px;
   padding: 20px;
 }
-;" data-marpit-pagination-total="14">
+" lang="en-US" data-marpit-pagination="4" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
+  
+  box-sizing: border-box;
+  text-align: right;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  padding: 20px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="14" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
 <h2 id="get-started">Get Started</h2>
-<p><a href="https://youtu.be/HVTJlGSxhcw"><img src="https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FHVTJlGSxhcw" alt="Get started with Dev Proxy" style="height:300px;" /></a></p>
+<p><a href="https://youtu.be/HVTJlGSxhcw"></a></p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
+  /* Layout of pagination content */
+  box-sizing: border-box;
+  text-align: right;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  padding: 20px;
+}
+" lang="en-US" data-marpit-pagination="4" style="" data-marpit-pagination-total="14" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
   /* Layout of pagination content */
   box-sizing: border-box;
   text-align: right;
@@ -173,7 +200,8 @@
 }
 ;" data-marpit-pagination-total="14">
 <h2 id="local-development">Local Development</h2>
-<p>Chrome bypass system proxy settings for localhost URLs - you need to exclude localhost URLs from the bypass list.</p>
+<p><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" data-marp-twemoji=""/> Dev Proxy will set itself as the system proxy. You can run commands Invoke-WebRequest or curl.</p>
+<p><img class="emoji" draggable="false" alt="ℹ️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2139.svg" data-marp-twemoji=""/> Chromium based browsers (Edge/Chrome) bypass system proxy settings for localhost URLs - you need to exclude localhost URLs from the bypass list.</p>
 <p>See <a href="https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/intercept-localhost-requests">documentation</a> for more information and how to use with Firefox.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
@@ -340,7 +368,7 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
 ;" data-marpit-pagination-total="14">
 <h3 id="running">Running</h3>
 <p><img src="img/devproxy_intercepted.png" alt="" /></p>
-<p>How does your application handle slow responses, rate limits and errors.</p>
+<p>How does your application handle slow responses, rate limits and errors?</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
   /* Layout of pagination content */
@@ -417,6 +445,7 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
 <li><code>RateLimitingPlugin</code> - Simulates rate-limit behaviors.</li>
 <li><code>RewritePlugin</code> - use rewrite rules - test example.com vs example.local</li>
 <li><code>UrlDiscoveryPlugin</code> - creates a list of requested URLs.</li>
+<li>... and much more</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
@@ -443,9 +472,9 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
 <ul>
 <li>Different data on nth request</li>
 <li>Binary data</li>
-<li>create a mock CRUD API
+<li>Create a mock CRUD API
 <ul>
-<li>access via <code>devtunnel</code> over the internet</li>
+<li>Access via <code>devtunnel</code> over the internet</li>
 <li>Supports Microsoft Entra</li>
 </ul>
 </li>
