@@ -1,0 +1,15 @@
+---
+config:
+  theme: base
+  themeVariables:
+    primaryColor: '#fff'
+    primaryTextColor: '#000'
+    primaryBorderColor: '#000'
+    lineColor: '#000'
+    secondaryColor: '#eee'
+    tertiaryColor: '#fff'
+---
+
+flowchart LR
+    A[fa:fa-computer Client] -->|Request| B(Proxy)
+    B[Dev Proxy] -->|Request| C[fa:fa-server Server]
