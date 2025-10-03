@@ -43,13 +43,17 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 Dev Proxy is an API simulator that helps you effortlessly test your app beyond the happy path.
 
 ![w:1000px](img/proxy.png)
+[What is a proxy?](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/concepts/what-is-proxy)
 
----
+## Use Cases
 
 - Create API errors - on internal (ie. localhost) and external (ie. Microsoft Graph).
-- Fire rate limits
-- Add latency
-- Stand up mock APIs
+- Fire rate limits and handle throttling - does your app handle `Retry-After` header.
+- Add latency and have the UI display loading data messages
+---
+- Stand up mock APIs - for when the backend is not ready yet
+- Intercept OpenAI-compatible requests to [analyze costs](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/understand-language-model-usage?tabs=aspire)
+- Check if your API is making requests with least permissions with `API Center`
 
 ## Get Started
 
@@ -57,36 +61,67 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 
 ## Local Development
 
-Chromium based browsers will not send localhost to the proxy.
+Chrome bypass system proxy settings for localhost URLs - you need to exclude localhost URLs from the bypass list.
+
+See [documentation](
+https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/intercept-localhost-requests) for more information and how to use with Firefox.
+
+---
+
+Run this - ⚠️ save your work beforehand
 
 ```sh
 taskkill /f /im msedge.exe
+cd "C:\Program Files (x86)\Microsoft\Edge\Application"
+msedge --proxy-bypass-list="<-loopback>" --proxy-server="127.0.0.1:8000"
 ```
 
-```sh
-"msedge.exe" --proxy-bypass-list="<-loopback>" --proxy-server="127.0.0.1:8000"
-```
-
-See [documentation](
-https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/intercept-localhost-requests) for more information
 
 ## Dev Proxy Toolkit
 
-![bg left h:400px](https://garrytrinder.gallerycdn.vsassets.io/extensions/garrytrinder/dev-proxy-toolkit/1.5.0/1759321881336/Microsoft.VisualStudio.Services.Icons.Default)
-[Dev Proxy Toolkit](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit)
+![bg left h:400px](https://garrytrinder.gallerycdn.vsassets.io/extensions/garrytrinder/dev-proxy-toolkit/1.5.0/1759321881336/Microsoft.VisualStudio.Services.Icons.Default) [VSCode extension](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit)
 
 ## Config
 
-`CTRL+SHIFT+P` - `Create create configuration file`
+Open the VSCode command palette `CTRL+SHIFT+P` and 'Dev Proxy Toolkit: Create create configuration file'
 
-`.devproxy/devproxyrc.json`
+Creates `.devproxy/devproxyrc.json`
 
 ---
 
 ![bg 100%](img/config.png)
 
-### Example
+### Running
 
 ![](img/devproxy_intercepted.png)
 
+How does your application handle slow responses, rate limits and errors.
+
 ## Plugins
+
+- `Auth` - Simulates authentication and authorization using API keys or OAuth2.
+- `CachingGuidancePlugin` - Shows a warning when Dev Proxy intercepted the same request within the specified period of time.
+- `CrudApiPlugin` - Simulates a CRUD API with an in-memory data store.
+
+---
+
+- `EntraMockResponsePlugin` - Mocking auth flow API requests.
+- `ExecutionSummaryPlugin` - Creates a summary of the requests that pass through the proxy.
+- `MockGeneratorPlugin` - Generate mocks from the request.
+
+---
+
+- `MockRequestPlugin` - test webhooks in your client from dev proxy.
+- `RateLimitingPlugin` - Simulates rate-limit behaviors.
+- `RewritePlugin` - use rewrite rules - test example.com vs example.local
+- `UrlDiscoveryPlugin` - creates a list of requested URLs.
+
+### Mock
+
+Return fixed data when your backend is not ready
+
+- Different data on nth request
+- Binary data
+- create a mock CRUD API
+  - access via `devtunnel` over the internet
+  - Supports Microsoft Entra
