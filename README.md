@@ -48,20 +48,24 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 ## Use Cases
 
 - Create API errors - on internal (ie. localhost) and external (ie. Microsoft Graph).
-- Fire rate limits and handle throttling - does your app handle `Retry-After` header.
-- Add latency and have the UI display loading data messages
+- Add latency and have the UI display loading data messages.
+- Fire rate limits and handle throttling - does your app handle `Retry-After` header?
+
 ---
+
 - Stand up mock APIs - for when the backend is not ready yet
 - Intercept OpenAI-compatible requests to [analyze costs](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/understand-language-model-usage?tabs=aspire)
 - Check if your API is making requests with least permissions with `API Center`
 
 ## Get Started
 
-[![Get started with Dev Proxy h:300px](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FHVTJlGSxhcw)](https://youtu.be/HVTJlGSxhcw)
+[![Get started with Dev Proxy bg right h:300px](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FHVTJlGSxhcw)](https://youtu.be/HVTJlGSxhcw)
 
 ## Local Development
 
-Chrome bypass system proxy settings for localhost URLs - you need to exclude localhost URLs from the bypass list.
+✅ Dev Proxy will set itself as the system proxy. You can run commands Invoke-WebRequest or curl.
+
+ℹ️ Chromium based browsers (Edge/Chrome) bypass system proxy settings for localhost URLs - you need to exclude localhost URLs from the bypass list.
 
 See [documentation](
 https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/intercept-localhost-requests) for more information and how to use with Firefox.
@@ -75,7 +79,6 @@ taskkill /f /im msedge.exe
 cd "C:\Program Files (x86)\Microsoft\Edge\Application"
 msedge --proxy-bypass-list="<-loopback>" --proxy-server="127.0.0.1:8000"
 ```
-
 
 ## Dev Proxy Toolkit
 
@@ -95,7 +98,7 @@ Creates `.devproxy/devproxyrc.json`
 
 ![](img/devproxy_intercepted.png)
 
-How does your application handle slow responses, rate limits and errors.
+How does your application handle slow responses, rate limits and errors?
 
 ## Plugins
 
@@ -115,6 +118,7 @@ How does your application handle slow responses, rate limits and errors.
 - `RateLimitingPlugin` - Simulates rate-limit behaviors.
 - `RewritePlugin` - use rewrite rules - test example.com vs example.local
 - `UrlDiscoveryPlugin` - creates a list of requested URLs.
+- ... and much more
 
 ### Mock
 
@@ -122,6 +126,6 @@ Return fixed data when your backend is not ready
 
 - Different data on nth request
 - Binary data
-- create a mock CRUD API
-  - access via `devtunnel` over the internet
+- Create a mock CRUD API
+  - Access via `devtunnel` over the internet
   - Supports Microsoft Entra
