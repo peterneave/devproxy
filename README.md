@@ -42,18 +42,18 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 
 Dev Proxy is an API simulator that helps you effortlessly test your app beyond the happy path.
 
-![w:1000px](img/proxy.png)
+![w:1000px](img/proxy.svg)
 [What is a proxy?](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/concepts/what-is-proxy)
 
 ## Use Cases
 
-- Create API errors - on internal (ie. localhost) and external (ie. Microsoft Graph).
-- Add latency and have the UI display loading data messages.
-- Fire rate limits and handle throttling - does your app handle `Retry-After` header?
+- Simulate API errors - on internal (ie. localhost) and external (ie. Microsoft Graph).
+- Add latency to requests to so you can test your UI display loading data messages.
+- Fire rate limits and handle throttling - test with the  `Retry-After` header.
 
 ---
 
-- Stand up mock APIs - for when the backend is not ready yet
+- Stand up mock APIs and data - for when the backend is not ready yet
 - Intercept OpenAI-compatible requests to [analyze costs](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/understand-language-model-usage?tabs=aspire)
 - Check if your API is making requests with least permissions with `API Center`
 
@@ -63,7 +63,7 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 
 ## Local Development
 
-✅ Dev Proxy will set itself as the system proxy. You can run commands Invoke-WebRequest or curl.
+✅ Dev Proxy will set itself as the system proxy. You can run commands `Invoke-WebRequest` or `curl`.
 
 ℹ️ Chromium based browsers (Edge/Chrome) bypass system proxy settings for localhost URLs - you need to exclude localhost URLs from the bypass list.
 
@@ -72,13 +72,20 @@ https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/intercept
 
 ---
 
-Run this - ⚠️ save your work beforehand
+ ⚠️ Save your work beforehand ⚠️
+Run this to test localhost
 
 ```sh
 taskkill /f /im msedge.exe
 cd "C:\Program Files (x86)\Microsoft\Edge\Application"
 msedge --proxy-bypass-list="<-loopback>" --proxy-server="127.0.0.1:8000"
 ```
+
+### Running
+
+![](img/devproxy_intercepted.png)
+
+How does your application handle slow responses, rate limits and errors?
 
 ## Dev Proxy Toolkit
 
@@ -93,12 +100,6 @@ Creates `.devproxy/devproxyrc.json`
 ---
 
 ![bg 100%](img/config.png)
-
-### Running
-
-![](img/devproxy_intercepted.png)
-
-How does your application handle slow responses, rate limits and errors?
 
 ## Plugins
 
@@ -124,8 +125,8 @@ How does your application handle slow responses, rate limits and errors?
 
 Return fixed data when your backend is not ready
 
-- Different data on nth request
-- Binary data
+- Different data on `nth` request
+- Can deliver binary data
 - Create a mock CRUD API
-  - Access via `devtunnel` over the internet
+  - Access via `devtunnel` over the internet - have your cloud apps connect to your machine.
   - Supports Microsoft Entra
