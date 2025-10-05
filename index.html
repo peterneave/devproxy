@@ -77,7 +77,7 @@
 ;" data-marpit-pagination-total="14">
 <h2 id="what-is-dev-proxy">What is Dev Proxy?</h2>
 <p>Dev Proxy is an API simulator that helps you effortlessly test your app beyond the happy path.</p>
-<p><img src="img/proxy.png" alt="" style="width:1000px;" /><br />
+<p><img src="img/proxy.svg" alt="" style="width:1000px;" /><br />
 <a href="https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/concepts/what-is-proxy">What is a proxy?</a></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
@@ -101,9 +101,9 @@
 ;" data-marpit-pagination-total="14">
 <h2 id="use-cases">Use Cases</h2>
 <ul>
-<li>Create API errors - on internal (ie. localhost) and external (ie. Microsoft Graph).</li>
-<li>Add latency and have the UI display loading data messages.</li>
-<li>Fire rate limits and handle throttling - does your app handle <code>Retry-After</code> header?</li>
+<li>Simulate API errors - on internal (ie. localhost) and external (ie. Microsoft Graph).</li>
+<li>Add latency to requests to so you can test your UI display loading data messages.</li>
+<li>Fire rate limits and handle throttling - test with the  <code>Retry-After</code> header.</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
@@ -126,7 +126,7 @@
 }
 ;" data-marpit-pagination-total="14">
 <ul>
-<li>Stand up mock APIs - for when the backend is not ready yet</li>
+<li>Stand up mock APIs and data - for when the backend is not ready yet</li>
 <li>Intercept OpenAI-compatible requests to <a href="https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/understand-language-model-usage?tabs=aspire">analyze costs</a></li>
 <li>Check if your API is making requests with least permissions with <code>API Center</code></li>
 </ul>
@@ -200,7 +200,7 @@
 }
 ;" data-marpit-pagination-total="14">
 <h2 id="local-development">Local Development</h2>
-<p><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" data-marp-twemoji=""/> Dev Proxy will set itself as the system proxy. You can run commands Invoke-WebRequest or curl.</p>
+<p><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2705.svg" data-marp-twemoji=""/> Dev Proxy will set itself as the system proxy. You can run commands <code>Invoke-WebRequest</code> or <code>curl</code>.</p>
 <p><img class="emoji" draggable="false" alt="ℹ️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/2139.svg" data-marp-twemoji=""/> Chromium based browsers (Edge/Chrome) bypass system proxy settings for localhost URLs - you need to exclude localhost URLs from the bypass list.</p>
 <p>See <a href="https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/intercept-localhost-requests">documentation</a> for more information and how to use with Firefox.</p>
 </section>
@@ -223,11 +223,35 @@
   padding: 20px;
 }
 ;" data-marpit-pagination-total="14">
-<p>Run this - <img class="emoji" draggable="false" alt="⚠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" data-marp-twemoji=""/> save your work beforehand</p>
+<p><img class="emoji" draggable="false" alt="⚠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" data-marp-twemoji=""/> Save your work beforehand <img class="emoji" draggable="false" alt="⚠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/26a0.svg" data-marp-twemoji=""/><br />
+Run this to test localhost</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-sh">taskkill /f /im msedge.exe
 <span class="hljs-built_in">cd</span> <span class="hljs-string">&quot;C:\Program Files (x86)\Microsoft\Edge\Application&quot;</span>
 msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quot;</span> --proxy-server=<span class="hljs-string">&quot;127.0.0.1:8000&quot;</span>
 </code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
+  /* Layout of pagination content */
+  box-sizing: border-box;
+  text-align: right;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  padding: 20px;
+}
+" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
+  /* Layout of pagination content */
+  box-sizing: border-box;
+  text-align: right;
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+  padding: 20px;
+}
+;" data-marpit-pagination-total="14">
+<h3 id="running">Running</h3>
+<p><img src="img/devproxy_intercepted.png" alt="" /></p>
+<p>How does your application handle slow responses, rate limits and errors?</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
   /* Layout of pagination content */
@@ -238,7 +262,7 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
   line-height: 120px;
   padding: 20px;
 }
-" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
+" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
   
   box-sizing: border-box;
   text-align: right;
@@ -247,7 +271,7 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
   line-height: 120px;
   padding: 20px;
 }
-;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="14" data-marpit-advanced-background="background" data-marpit-advanced-background-split="left"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;https://garrytrinder.gallerycdn.vsassets.io/extensions/garrytrinder/dev-proxy-toolkit/1.5.0/1759321881336/Microsoft.VisualStudio.Services.Icons.Default&quot;);background-size:auto 400px;"></figure></div></section></foreignObject><foreignObject width="50%" height="720" x="50%"><section id="9" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="14" data-marpit-advanced-background="background" data-marpit-advanced-background-split="left"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;https://garrytrinder.gallerycdn.vsassets.io/extensions/garrytrinder/dev-proxy-toolkit/1.5.0/1759321881336/Microsoft.VisualStudio.Services.Icons.Default&quot;);background-size:auto 400px;"></figure></div></section></foreignObject><foreignObject width="50%" height="720" x="50%"><section id="10" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
   /* Layout of pagination content */
   box-sizing: border-box;
   text-align: right;
@@ -256,7 +280,7 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
   line-height: 120px;
   padding: 20px;
 }
-" lang="en-US" data-marpit-pagination="7" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
+" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
   
   box-sizing: border-box;
   text-align: right;
@@ -278,7 +302,7 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
   line-height: 120px;
   padding: 20px;
 }
-" lang="en-US" data-marpit-pagination="7" style="" data-marpit-pagination-total="14" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="left"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
+" lang="en-US" data-marpit-pagination="8" style="" data-marpit-pagination-total="14" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="left"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
   /* Layout of pagination content */
   box-sizing: border-box;
   text-align: right;
@@ -287,7 +311,7 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
   line-height: 120px;
   padding: 20px;
 }
-" lang="en-US" data-marpit-pagination="8" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
+" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
   /* Layout of pagination content */
   box-sizing: border-box;
   text-align: right;
@@ -310,7 +334,7 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
   line-height: 120px;
   padding: 20px;
 }
-" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
+" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
   /* Layout of pagination content */
   box-sizing: border-box;
   text-align: right;
@@ -319,7 +343,7 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
   line-height: 120px;
   padding: 20px;
 }
-;" data-marpit-pagination-total="14" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/config.png&quot;);background-size:100%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
+;" data-marpit-pagination-total="14" data-marpit-advanced-background="background"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;img/config.png&quot;);background-size:100%;"></figure></div></section></foreignObject><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
   /* Layout of pagination content */
   box-sizing: border-box;
   text-align: right;
@@ -328,7 +352,7 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
   line-height: 120px;
   padding: 20px;
 }
-" lang="en-US" data-marpit-pagination="9" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
+" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
   /* Layout of pagination content */
   box-sizing: border-box;
   text-align: right;
@@ -347,30 +371,7 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
   line-height: 120px;
   padding: 20px;
 }
-" lang="en-US" data-marpit-pagination="9" style="" data-marpit-pagination-total="14" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
-  /* Layout of pagination content */
-  box-sizing: border-box;
-  text-align: right;
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
-  padding: 20px;
-}
-" lang="en-US" data-marpit-pagination="10" style="--paginate:true;--theme:uncover;--heading-divider:3;--style:section::after {
-  /* Layout of pagination content */
-  box-sizing: border-box;
-  text-align: right;
-  width: 120px;
-  height: 120px;
-  line-height: 120px;
-  padding: 20px;
-}
-;" data-marpit-pagination-total="14">
-<h3 id="running">Running</h3>
-<p><img src="img/devproxy_intercepted.png" alt="" /></p>
-<p>How does your application handle slow responses, rate limits and errors?</p>
-</section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
+" lang="en-US" data-marpit-pagination="10" style="" data-marpit-pagination-total="14" data-marpit-advanced-background="pseudo"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="uncover" data-heading-divider="3" data-style="section::after {
   /* Layout of pagination content */
   box-sizing: border-box;
   text-align: right;
@@ -470,11 +471,11 @@ msedge --proxy-bypass-list=<span class="hljs-string">&quot;&lt;-loopback&gt;&quo
 <h3 id="mock">Mock</h3>
 <p>Return fixed data when your backend is not ready</p>
 <ul>
-<li>Different data on nth request</li>
-<li>Binary data</li>
+<li>Different data on <code>nth</code> request</li>
+<li>Can deliver binary data</li>
 <li>Create a mock CRUD API
 <ul>
-<li>Access via <code>devtunnel</code> over the internet</li>
+<li>Access via <code>devtunnel</code> over the internet - have your cloud apps connect to your machine.</li>
 <li>Supports Microsoft Entra</li>
 </ul>
 </li>

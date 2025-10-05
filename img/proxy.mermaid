@@ -9,7 +9,14 @@ config:
     secondaryColor: '#eee'
     tertiaryColor: '#fff'
 ---
-
 flowchart LR
-    A[fa:fa-computer Client] -->|Request| B(Proxy)
-    B[Dev Proxy] -->|Request| C[fa:fa-server Server]
+ subgraph YourComputer["Your computer"]
+        Client["fa:fa-computer Client"]
+        DevProxy["Dev Proxy"]
+  end
+    Client -- Request --> DevProxy
+    DevProxy -- Request --> Server["fa:fa-server Server"]
+    style Client stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style DevProxy stroke:#000000
+    style Server stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style YourComputer stroke:#000000
