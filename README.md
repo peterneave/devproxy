@@ -38,6 +38,10 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 
 ⬇️ Download [PowerPoint](https://neave.dev/devproxy/devproxy.pptx) and [PDF](https://neave.dev/devproxy/devproxy.pdf)
 
+## Story
+
+September 2025 CloudFlare outage on their Cloudflare Dashboard due to repeated calls to their own API - the cause was a useEffect without a dependency.
+
 ## What is Dev Proxy?
 
 Dev Proxy is an API simulator that helps you effortlessly test your app beyond the happy path.
@@ -47,15 +51,15 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 
 ## Use Cases
 
-- Simulate API errors - on internal (ie. localhost) and external (ie. Microsoft Graph).
-- Add latency to requests to so you can test your UI display loading data messages.
-- Fire rate limits and handle throttling - test with the  `Retry-After` header.
+- **Simulate API errors** - on internal (ie. localhost) and external (ie. Microsoft Graph).
+- **Add latency** to requests to so you can test your UI display loading data messages.
+- Fire **rate limits** and **handle throttling** - test with the  `Retry-After` header.
 
 ---
 
-- Stand up mock APIs and data - for when the backend is not ready yet
-- Intercept OpenAI-compatible requests to [analyze costs](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/understand-language-model-usage?tabs=aspire)
-- Check if your API is making requests with least permissions with `API Center`
+- Stand up **mock APIs and data** - for when the backend is not ready yet
+- **Intercept OpenAI-compatible requests** to [analyze costs](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/understand-language-model-usage?tabs=aspire)
+- Check if your API is making requests with **least permissions** with `API Center`
 
 ## Get Started
 
@@ -63,12 +67,11 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 
 ## Local Development
 
-✅ Dev Proxy will set itself as the system proxy. You can run commands `Invoke-WebRequest` or `curl`.
 
-ℹ️ Chromium based browsers (Edge/Chrome) bypass system proxy settings for localhost URLs - you need to exclude localhost URLs from the bypass list.
+- ✅ Dev Proxy will set itself as the system proxy. You can run commands `Invoke-WebRequest` or `curl`.
+- ℹ️ Chromium* based browsers (Edge/Chrome) bypass system proxy settings for localhost URLs - you need to exclude localhost URLs from the bypass list.
 
-See [documentation](
-https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/intercept-localhost-requests) for more information and how to use with Firefox.
+<sub>*See [documentation](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/intercept-localhost-requests) for Firefox.</sub>
 
 ---
 
@@ -81,15 +84,16 @@ cd "C:\Program Files (x86)\Microsoft\Edge\Application"
 msedge --proxy-bypass-list="<-loopback>" --proxy-server="127.0.0.1:8000"
 ```
 
-### Running
+### Usage
 
 ![](img/devproxy_intercepted.png)
 
-How does your application handle slow responses, rate limits and errors?
+<sub>How does your application handle
+slow responses, rate limits and errors?</sub>
 
 ## Dev Proxy Toolkit
 
-![bg left h:400px](https://garrytrinder.gallerycdn.vsassets.io/extensions/garrytrinder/dev-proxy-toolkit/1.5.0/1759321881336/Microsoft.VisualStudio.Services.Icons.Default) [VSCode extension](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit)
+![bg right h:300px](https://garrytrinder.gallerycdn.vsassets.io/extensions/garrytrinder/dev-proxy-toolkit/1.5.0/1759321881336/Microsoft.VisualStudio.Services.Icons.Default) [VSCode extension](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit) is a wrapper to the CLI.
 
 ## Config
 
@@ -102,6 +106,8 @@ Creates `.devproxy/devproxyrc.json`
 ![bg 100%](img/config.png)
 
 ## Plugins
+
+💡 Hopefully this gives you some ideas 💡
 
 - `Auth` - Simulates authentication and authorization using API keys or OAuth2.
 - `CachingGuidancePlugin` - Shows a warning when Dev Proxy intercepted the same request within the specified period of time.
@@ -121,12 +127,12 @@ Creates `.devproxy/devproxyrc.json`
 - `UrlDiscoveryPlugin` - creates a list of requested URLs.
 - ... and much more
 
-### Mock
+### Focus Mock and CRUD Plugin
 
-Return fixed data when your backend is not ready
+*Return fixed data when your backend is not ready*
 
 - Different data on `nth` request
 - Can deliver binary data
-- Create a mock CRUD API
-  - Access via `devtunnel` over the internet - have your cloud apps connect to your machine.
-  - Supports Microsoft Entra
+- Create a mock CRUD API - mutates in memory and resets on restart.
+- Access via `devtunnel` over the internet - have your cloud apps connect to your machine.
+- Supports Microsoft Entra
