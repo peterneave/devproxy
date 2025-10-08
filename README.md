@@ -29,15 +29,6 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 <!--fit-->
 <!-- _paginate: skip -->
 
-## Foreword
-<!-- _paginate: skip -->
-
-📝 Contribute on [![w:48](img/github-mark.svg) GitHub](https://github.com/peterneave/devproxy)
-
-🔗 View Online [neave.dev/devproxy](https://neave.dev/devproxy)
-
-⬇️ Download [PowerPoint](https://neave.dev/devproxy/devproxy.pptx) and [PDF](https://neave.dev/devproxy/devproxy.pdf)
-
 ## Story
 
 September 2025 CloudFlare outage on their Cloudflare Dashboard due to repeated calls to their own API - the cause was a useEffect without a dependency.
@@ -136,3 +127,12 @@ Creates `.devproxy/devproxyrc.json`
 - Create a mock CRUD API - mutates in memory and resets on restart.
 - Access via `devtunnel` over the internet - have your cloud apps connect to your machine.
 - Supports Microsoft Entra
+
+## Next Steps
+<!-- _paginate: skip -->
+
+🔗 View Online [neave.dev/devproxy](https://neave.dev/devproxy)
+
+⬇️ Download [PowerPoint](https://neave.dev/devproxy/devproxy.pptx) and [PDF](https://neave.dev/devproxy/devproxy.pdf)
+
+📝 Contribute on [![w:48](img/github-mark.svg) GitHub](https://github.com/peterneave/devproxy)
