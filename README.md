@@ -118,7 +118,7 @@ Creates `.devproxy/devproxyrc.json`
 - `UrlDiscoveryPlugin` - creates a list of requested URLs.
 - ... and much more
 
-### Focus Mock and CRUD Plugin
+### 🔍 Mock and CRUD Plugin
 
 *Return fixed data when your backend is not ready*
 
@@ -128,7 +128,15 @@ Creates `.devproxy/devproxyrc.json`
 - Access via `devtunnel` over the internet - have your cloud apps connect to your machine.
 - Supports Microsoft Entra
 
-## Next Steps
+## Samples
+
+[github.com/pnp/proxy-samples](https://github.com/pnp/proxy-samples)
+
+![bg right w:600px](img/samples_http_cat.png)
+
+- [http cats](https://github.com/pnp/proxy-samples/tree/main/samples/http-cats) - return cat images when simulating erroneous HTTP status codes for Microsoft Graph.
+
+## Resources
 <!-- _paginate: skip -->
 
 🔗 View Online [neave.dev/devproxy](https://neave.dev/devproxy)
