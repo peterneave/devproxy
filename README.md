@@ -98,7 +98,7 @@ Creates `.devproxy/devproxyrc.json`
 
 ## Plugins
 
-💡 Hopefully this gives you some ideas 💡
+Use [plugins](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/technical-reference/overview) or make your own
 
 - `Auth` - Simulates authentication and authorization using API keys or OAuth2.
 - `CachingGuidancePlugin` - Shows a warning when Dev Proxy intercepted the same request within the specified period of time.
