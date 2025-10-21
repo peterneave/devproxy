@@ -40,6 +40,20 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 ![w:1000px](img/proxy.svg)
 [What is a proxy?](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/concepts/what-is-proxy)
 
+## For and against (Pro et contra)
+
+✅ Pros
+
+- Don't have to mock frontend and backend.
+- Use whatever script or langauge you want.
+- It was like it was never there - bypass the proxy to return to your regular behaviour.
+
+❌ Cons
+
+- Takes time to setup.
+- Another dependency to install.
+- Small learning curve.
+
 ## Use Cases
 
 - **Simulate API errors** - on internal (ie. localhost) and external (ie. Microsoft Graph).
