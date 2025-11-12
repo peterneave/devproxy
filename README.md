@@ -26,7 +26,6 @@ _class:
 
 Dev Proxy is an API simulator that helps you effortlessly test your app beyond the happy path.
 
-<!--fit-->
 <!-- _paginate: skip -->
 
 ## Story
@@ -68,10 +67,10 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 
 ## Get Started
 
+[Dev Proxy with Garry Trinder](https://youtu.be/HVTJlGSxhcw)
 [![Get started with Dev Proxy bg right h:300px](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FHVTJlGSxhcw)](https://youtu.be/HVTJlGSxhcw)
 
 ## Local Development
-
 
 - ✅ Dev Proxy will set itself as the system proxy. You can run commands `Invoke-WebRequest` or `curl`.
 - ℹ️ Chromium* based browsers (Edge/Chrome) bypass system proxy settings for localhost URLs - you need to exclude localhost URLs from the bypass list.
