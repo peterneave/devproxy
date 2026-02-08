@@ -13,6 +13,9 @@ style: |
     line-height: 120px;
     padding: 20px;
   }
+  video::-webkit-media-controls {
+    will-change: transform;
+  }
 ---
 
 
@@ -100,7 +103,7 @@ slow responses, rate limits and errors?</sub>
 ## Demonstration
 
 <video controls='controls' width='80%' src='/video/devproxy_sample.mp4'></video>
-[![Watch demonstration](/video/devproxy_sample.mp4)](video/devproxy_sample.mp4)
+[Watch demonstration](/video/devproxy_sample.mp4)
 
 
 ## Dev Proxy Toolkit
