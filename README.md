@@ -76,9 +76,9 @@ September 2025 CloudFlare outage on their Cloudflare Dashboard due to repeated c
 
 <sub>*See [documentation](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/how-to/intercept-localhost-requests) for Firefox.</sub>
 
----
 
- ⚠️ Save your work beforehand ⚠️
+## How to run locally
+
 Run this to test localhost
 
 ```pwsh
@@ -88,6 +88,7 @@ cd "C:\Program Files (x86)\Microsoft\Edge\Application"
   --proxy-bypass-list="<-loopback>" `
   --proxy-server="127.0.0.1:8000"
 ```
+ ⚠️ Save your work beforehand ⚠️
 
 ### Usage
 
