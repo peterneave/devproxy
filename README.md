@@ -100,6 +100,8 @@ slow responses, rate limits and errors?</sub>
 ## Demonstration
 
 <video controls='controls' width='80%' src='/video/devproxy_sample.mp4'></video>
+[![Watch demonstration](/video/devproxy_sample.mp4)](video/devproxy_sample.mp4)
+
 
 ## Dev Proxy Toolkit
 
