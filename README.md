@@ -34,16 +34,15 @@ September 2025 CloudFlare outage on their Cloudflare Dashboard due to repeated c
 
 ## What is Dev Proxy?
 
-Dev Proxy is an API simulator that helps you effortlessly test your app beyond the happy path.
+[Dev Proxy](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/concepts/what-is-proxy) is a forward proxy that you can use to intercept and modify requests from your application to any target server. With Dev Proxy, you can:
 
 ![w:1000px](img/proxy.svg)
-[What is a proxy?](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/concepts/what-is-proxy)
 
 ## For and against (Pro et contra)
 
 ✅ Pros
 
-- Don't have to mock frontend and backend.
+- You can mock whatever backend scenario you want.
 - Use whatever script or langauge you want.
 - It was like it was never there - bypass the proxy to return to your regular behaviour.
 
@@ -67,8 +66,8 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
 
 ## Get Started
 
-[Dev Proxy with Garry Trinder](https://youtu.be/HVTJlGSxhcw)
-[![Get started with Dev Proxy bg right h:300px](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FHVTJlGSxhcw)](https://youtu.be/HVTJlGSxhcw)
+[...with Dev Proxy](https://youtu.be/HVTJlGSxhcw)
+[![Get started with Dev Proxy bg right h:300px](https://markdown-videos-api.jorgenkh.no/url?url=https%3A%2F%2Fyoutu.be%2FHVTJlGSxhcw)](https://youtu.be/HVTJlGSxhcw) from the Dev Proxy Team
 
 ## Local Development
 
@@ -82,10 +81,12 @@ Dev Proxy is an API simulator that helps you effortlessly test your app beyond t
  ⚠️ Save your work beforehand ⚠️
 Run this to test localhost
 
-```sh
+```pwsh
 taskkill /f /im msedge.exe
 cd "C:\Program Files (x86)\Microsoft\Edge\Application"
-msedge --proxy-bypass-list="<-loopback>" --proxy-server="127.0.0.1:8000"
+./msedge `
+  --proxy-bypass-list="<-loopback>" `
+  --proxy-server="127.0.0.1:8000"
 ```
 
 ### Usage
@@ -94,6 +95,10 @@ msedge --proxy-bypass-list="<-loopback>" --proxy-server="127.0.0.1:8000"
 
 <sub>How does your application handle
 slow responses, rate limits and errors?</sub>
+
+## Demonstration
+
+<video controls='controls' width='80%' src='/video/devproxy_sample.mp4'></video>
 
 ## Dev Proxy Toolkit
 
@@ -129,7 +134,7 @@ Use [plugins](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/te
 - `RateLimitingPlugin` - Simulates rate-limit behaviors.
 - `RewritePlugin` - use rewrite rules - test example.com vs example.local
 - `UrlDiscoveryPlugin` - creates a list of requested URLs.
-- ... and much more
+- ... and much more (including your own)
 
 ### 🔍 Mock and CRUD Plugin
 
@@ -148,6 +153,10 @@ Use [plugins](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/te
 ![bg right w:600px](img/samples_http_cat.png)
 
 - [http cats](https://github.com/pnp/proxy-samples/tree/main/samples/http-cats) - return cat images when simulating erroneous HTTP status codes for Microsoft Graph.
+
+## CloudFlare
+
+What about the CloudFlare outage and how could Dev Proxy have helped in this situation? The plugin `CachingGuidancePlugin` could have been run on the developers machine and they would have seen that the API was getting called too frequently.
 
 ## Resources
 <!-- _paginate: skip -->
