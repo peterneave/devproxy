@@ -100,12 +100,6 @@ cd "C:\Program Files (x86)\Microsoft\Edge\Application"
 <sub>How does your application handle
 slow responses, rate limits and errors?</sub>
 
-## Demonstration
-
-<video controls='controls' width='80%' src='/video/devproxy_sample.mp4'></video>
-[Watch demonstration](/video/devproxy_sample.mp4)
-
-
 ## Dev Proxy Toolkit
 
 ![bg right h:300px](https://garrytrinder.gallerycdn.vsassets.io/extensions/garrytrinder/dev-proxy-toolkit/1.5.0/1759321881336/Microsoft.VisualStudio.Services.Icons.Default) [VSCode extension](https://marketplace.visualstudio.com/items?itemName=garrytrinder.dev-proxy-toolkit) is a wrapper to the CLI.
