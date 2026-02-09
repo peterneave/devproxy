@@ -25,15 +25,16 @@ _class:
  - invert
 -->
 
-# DevProxy
+# Dev Proxy
 
-Dev Proxy is an API simulator that helps you effortlessly test your app beyond the happy path.
+Dev Proxy is a tool that helps you effortlessly
+test your app beyond the happy path.
 
 <!-- _paginate: skip -->
 
 ## Story
 
-September 2025 CloudFlare outage on their Cloudflare Dashboard due to repeated calls to their own API - the cause was a useEffect without a dependency.
+September 2025 CloudFlare outage on their Cloudflare Dashboard due to repeated calls to their own API - the cause was a `useEffect` without any dependencies. DDoS themselves.
 
 ## What is Dev Proxy?
 
