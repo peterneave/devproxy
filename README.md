@@ -96,10 +96,7 @@ cd "C:\Program Files (x86)\Microsoft\Edge\Application"
 
 ### Usage
 
-![](img/devproxy_intercepted.png)
-
-<sub>How does your application handle
-slow responses, rate limits and errors?</sub>
+![h:500px](img/dev_proxy_demo.gif)
 
 ## Dev Proxy Toolkit
 
