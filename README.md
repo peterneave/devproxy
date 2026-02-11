@@ -83,7 +83,7 @@ September 2025 CloudFlare outage on their Cloudflare Dashboard due to repeated c
 
 ## How to run locally
 
-Run this to test localhost
+Run this to test local API's
 
 ```pwsh
 taskkill /f /im msedge.exe
@@ -119,6 +119,11 @@ Use [plugins](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/te
 - `Auth` - Simulates authentication and authorization using API keys or OAuth2.
 - `CachingGuidancePlugin` - Shows a warning when Dev Proxy intercepted the same request within the specified period of time.
 - `CrudApiPlugin` - Simulates a CRUD API with an in-memory data store.
+
+---
+
+- `GenericRandomErrorPlugin`  - Fails requests with a random selected error from file containing mocked errors.
+- `LatencyPlugin` - Delays responses by a random number of milliseconds from the configured range.
 
 ---
 
