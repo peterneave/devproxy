@@ -38,7 +38,7 @@ September 2025 CloudFlare outage on their Cloudflare Dashboard due to repeated c
 
 ## What is Dev Proxy?
 
-[Dev Proxy](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/concepts/what-is-proxy) is a forward proxy that you can use to intercept and modify requests from your application to any target server. With Dev Proxy, you can:
+[Dev Proxy](https://learn.microsoft.com/en-us/microsoft-cloud/dev/dev-proxy/concepts/what-is-proxy) is a forward proxy that you can use to intercept and modify requests from your application to any target server - local or remote.
 
 ![w:1000px](img/proxy.svg)
 
